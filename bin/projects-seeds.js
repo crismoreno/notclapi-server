@@ -7,7 +7,16 @@ mongoose.connect('mongodb://localhost/notcalpi');
 
 
 const projects = [
+  {name: 'test',
+    tags: ['test', 'test', 'test'],
+    img: 'test',
+    description: 'test',
+    kind: 'test',
+    date: 'test'
+  }
 ];
+
+
 
 
 Project.create(projects, (err, projects) => {
