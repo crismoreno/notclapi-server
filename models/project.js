@@ -4,10 +4,12 @@ const Schema = mongoose.Schema;
 const projectSchema = new Schema({
   name: String,
   tags: [String],
-  img: String,
+  img: [String],
   description: String,
   kind: String,
-  date: String
+  date: String,
+  collaborators: String,
+  website: String
 }, {
   timestamps: { createdAt: 'created_at', updatedAt: 'updated_at' }
 });
