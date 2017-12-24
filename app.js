@@ -1,19 +1,42 @@
+
+// PACKAGES
 const express = require('express');
 const logger = require('morgan');
 const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
+const dotenv = require('dotenv');
+const cors = require('cors');
+const mongoose = require('mongoose');
 
+// HELPERS REQUIRED
+const response = require('./helpers/response');
+
+// ROUTES REQUIRED
 const index = require('./routes/index');
 
-
+// EXPRESS
 const app = express();
+dotenv.config();
+
+// MONGOOSE CONFIG
+mongoose.Promise = Promise;
+mongoose.connect(process.env.MONGODB_URI, {
+  keepAlive: true,
+  reconnectTries: Number.MAX_VALUE,
+  useMongoClient: true
+});
 
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
+app.use(cors({
+  credentials: true,
+  origin: [process.env.CLIENT_URL]
+}));
 
 
+// ROUTES
 app.use('/', index);
 
 

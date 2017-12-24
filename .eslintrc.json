@@ -18,15 +18,30 @@
         "ecmaVersion": 6
     },
     "rules": {
-        "indent": [
-            2,
-            2
-        ],
+        // "indent": [
+        //     2,
+        //     2
+        // ],
         "semi": [
             "error",
             "always"
         ],
-        "no-multiple-empty-lines": "off"
-
+        //"no-unused-vars": "off",
+        "no-multiple-empty-lines": "off",
+        //"eol-last": "off",
+        //"no-sequence": "never",
+        //"standard-property-even-spacing": "never",
+        //"quotes": ["error", "double"],
+        //"comma-dangle": ["error", "never"],
+        //"no-const-assign": "error",
+        //"prefer-const": "error",
+        //"no-console": ["error", { "allow": ["warn", "error"] }],
+        //"space-before-function-paren": ["error", "never"],
+        //"quotes": ["error", "double"],
+        //"space-in-parens": ["error", "never"],
+        //"no-var": "error",
+        //"prefer-const": "error",
+        //"max-len": ["error", 120]
+        "indent": "off"
     }
 }
