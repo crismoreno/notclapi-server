@@ -13,6 +13,7 @@ const response = require('./helpers/response');
 
 // ROUTES REQUIRED
 const index = require('./routes/index');
+const projects = require('./routes/projects');
 
 // EXPRESS
 const app = express();
@@ -38,6 +39,7 @@ app.use(cors({
 
 // ROUTES
 app.use('/', index);
+app.use('/projects', projects);
 
 
 // catch 404 and forward to error handler

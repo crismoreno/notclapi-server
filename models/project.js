@@ -5,8 +5,9 @@ const projectSchema = new Schema({
   name: String,
   tags: [String],
   img: [String],
+  cover: String,
   description: String,
-  kind: String,
+  customer: String,
   date: String,
   collaborators: String,
   website: String
